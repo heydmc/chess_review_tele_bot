@@ -245,7 +245,7 @@ async def handle_game_link(update: Update, context: CallbackContext) -> None:
                 # --- Screenshot Sending Logic ---
                 # 1. Send the login screenshot
                 if os.path.exists("home_page_screenshot.png"):
-                    await message.reply_photo("home_page_screenshot.png", caption="Login was successful!")
+                    #await message.reply_photo("home_page_screenshot.png", caption="Login was successful!")
                 
                 # 2. Send the analysis URL
                 await message.reply_text("Alright, here is the review of your game! 👇")
@@ -253,13 +253,13 @@ async def handle_game_link(update: Update, context: CallbackContext) -> None:
                 
                 # 3. Send the analysis page screenshot
                 if os.path.exists("new_tab_screenshot.png"):
-                    await message.reply_photo("new_tab_screenshot.png", caption="Analysis page is ready. ✨")
+                    #await message.reply_photo("new_tab_screenshot.png", caption="Analysis page is ready. ✨")
 
             except Exception as e:
                 logger.error(f"The chess flow failed: {e}")
                 # 4. Send an error screenshot if the process fails
                 if os.path.exists("error.png"):
-                    await message.reply_photo("error.png", caption="An error occurred during the process.")
+                    #await message.reply_photo("error.png", caption="An error occurred during the process.")
     else:
         await message.reply_text("Please send a valid chess.com game link, like 'https://www.chess.com/live/game/123456789'.")
 
